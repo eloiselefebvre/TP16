@@ -12,16 +12,19 @@ class change(QWidget):
 
         self.layout.addWidget(self.button)
         #self.button.clicked.connect(self.closed)
+        n = 0
         self.button.clicked.connect(self.text)
-
+        n += 1
         self.setLayout(self.layout)
 
     def closed(self):
         self.close()
 
-    def text(self):
-        bouttontext = 'click'
-        self.button.setText(bouttontext)
+    def text(self,n):
+        while n<=20 :
+            bouttontext = 'click' + str(n)
+            self.button.setText(bouttontext)
+
 
 if __name__ == '__main__':
     app = QApplication([])
