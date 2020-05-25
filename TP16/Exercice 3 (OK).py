@@ -16,7 +16,8 @@ class change(QWidget):
         self.setLayout(self.layout)
         self.n = 1
         #self.button.clicked.connect(self.buttonchange)
-        self.button.clicked.connect(self.textchange)
+        #self.button.clicked.connect(self.textchange)
+        self.button.clicked.connect(self.totalchange)
 
     #def closed(self):
     #    self.close()
@@ -27,9 +28,15 @@ class change(QWidget):
     #    self.n += 1
 
 
-    def textchange(self):
+    #def textchange(self):
+    #    newtext = 'click' + str(self.n)
+    #    self.text.setText(newtext)
+    #    self.n += 1
+
+    def totalchange(self):
         newtext = 'click' + str(self.n)
         self.text.setText(newtext)
+        self.button.setText(newtext)
         self.n += 1
 
 
