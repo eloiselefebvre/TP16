@@ -9,32 +9,34 @@ class change(QWidget):
         self.layout = QVBoxLayout()
         self.setWindowTitle('IHM')
         self.button = QPushButton('Changer mon texte !')
-        self.text = QTextEdit('')
+        self.text = QTextEdit('affichage')
         self.layout.addWidget(self.button)
         self.layout.addWidget(self.text)
         #self.button.clicked.connect(self.closed)
-        n = 0
-        self.button.clicked.connect(self.text1)
-        n+=1
         self.setLayout(self.layout)
+        self.n = 1
+        #self.button.clicked.connect(self.buttonchange)
+        self.button.clicked.connect(self.textchange)
 
-    def closed(self):
-        self.close()
+    #def closed(self):
+    #    self.close()
 
-    #def text(self,n):
-    #    while n<=20 :
-    #        bouttontext = 'click' + str(n)
-    #        self.button.setText(bouttontext)
+    #def buttonchange(self):
+    #    newtext = 'click' + str(self.n)
+    #    self.button.setText(newtext)
+    #    self.n += 1
 
-    #def text1(self,n):
-        #self.text.setText(n)
 
-    #def text2(self,n):
-        #self.
+    def textchange(self):
+        newtext = 'click' + str(self.n)
+        self.text.setText(newtext)
+        self.n += 1
 
 
 if __name__ == '__main__':
     app = QApplication([])
-    cha = change()
-    cha.show()
+    change = change()
+    change.show()
     app.exec_()
+
+
